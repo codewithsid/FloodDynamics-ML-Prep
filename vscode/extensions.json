@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter",
+    "eamodio.gitlens",
+    "yzhang.markdown-all-in-one",
+    "usernamehw.errorlens",
+    "ms-python.black-formatter",
+    "ms-python.isort",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}

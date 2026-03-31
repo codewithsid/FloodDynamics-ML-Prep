@@ -1,0 +1,8 @@
+{
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "jupyter.askForKernelRestart": false,
+    "python.analysis.extraPaths" : ["./src"],
+    "jupyter.notebookFileRoot": "${workspaceFolder}/notebooks"
+}

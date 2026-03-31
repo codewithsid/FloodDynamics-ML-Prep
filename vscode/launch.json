@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name" : "Run Current Python File",
+      "type" : "python",
+      "request" : "launch",
+      "program" : "${file}",
+      "console" : "integratedTerminal"
+    },
+    {
+      "name": "Run Training Script",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/training/train.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Run Evaluation",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/evaluation/evaluate.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run RL Training",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/projects/rl_flood_controller/train_rl.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run FastAPI Server",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "src.api.main:app",
+        "--reload"
+      ],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
