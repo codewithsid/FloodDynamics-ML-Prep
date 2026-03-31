@@ -1,0 +1,296 @@
+{
+  "template_name": "ML Internship HQ",
+  "note": "This is a structured template source file for recreating the workspace in Notion. Notion does not currently support importing an arbitrary JSON database schema directly as a native workspace, so use this JSON as a blueprint or with a custom converter.",
+  "pages": [
+    {
+      "name": "ML Internship HQ",
+      "type": "dashboard",
+      "sections": [
+        {
+          "name": "Today",
+          "source_database": "Daily Build Log",
+          "view_type": "table",
+          "filter": {
+            "Date": "today"
+          }
+        },
+        {
+          "name": "This Week",
+          "source_database": "ML Internship Roadmap",
+          "view_type": "table",
+          "filter": {
+            "Status": "In Progress"
+          }
+        },
+        {
+          "name": "Active Projects",
+          "source_database": "ML Projects",
+          "view_type": "table",
+          "filter": {
+            "Status": {
+              "not": "Done"
+            }
+          }
+        },
+        {
+          "name": "Notes",
+          "type": "text_section",
+          "starter_prompts": [
+            "RL insights",
+            "Bugs I solved",
+            "Questions for Flood Dynamics",
+            "Patterns I notice"
+          ]
+        }
+      ]
+    }
+  ],
+  "databases": [
+    {
+      "name": "ML Internship Roadmap",
+      "properties": [
+        {
+          "name": "Week",
+          "type": "title"
+        },
+        {
+          "name": "Focus Area",
+          "type": "select",
+          "options": [
+            "Time Series",
+            "Reinforcement Learning",
+            "Physics + ML",
+            "Deployment"
+          ]
+        },
+        {
+          "name": "Goal",
+          "type": "text"
+        },
+        {
+          "name": "Key Output",
+          "type": "text"
+        },
+        {
+          "name": "Status",
+          "type": "select",
+          "options": [
+            "Not Started",
+            "In Progress",
+            "Done"
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "Week": "Week 1",
+          "Focus Area": "Time Series",
+          "Goal": "Build a rainfall-to-water-level forecasting baseline and understand sequence modeling fundamentals.",
+          "Key Output": "Flood predictor v1 in PyTorch",
+          "Status": "Not Started"
+        },
+        {
+          "Week": "Week 2",
+          "Focus Area": "Reinforcement Learning",
+          "Goal": "Learn the RL loop, train PPO on a toy problem, then create a custom flood-control environment.",
+          "Key Output": "RL flood controller v1",
+          "Status": "Not Started"
+        },
+        {
+          "Week": "Week 3",
+          "Focus Area": "Physics + ML",
+          "Goal": "Explore how ML can approximate or correct simplified simulation outputs.",
+          "Key Output": "Hybrid simulation-informed model",
+          "Status": "Not Started"
+        },
+        {
+          "Week": "Week 4",
+          "Focus Area": "Deployment",
+          "Goal": "Package one trained model behind a simple API and practice ML workflow hygiene.",
+          "Key Output": "FastAPI /predict endpoint",
+          "Status": "Not Started"
+        }
+      ]
+    },
+    {
+      "name": "Daily Build Log",
+      "properties": [
+        {
+          "name": "Date",
+          "type": "date"
+        },
+        {
+          "name": "Day #",
+          "type": "number"
+        },
+        {
+          "name": "Focus Area",
+          "type": "select",
+          "options": [
+            "Time Series",
+            "Reinforcement Learning",
+            "Physics + ML",
+            "Deployment",
+            "General ML",
+            "Meeting / Planning"
+          ]
+        },
+        {
+          "name": "Today's Goals (Max 3)",
+          "type": "text"
+        },
+        {
+          "name": "What I Built",
+          "type": "text"
+        },
+        {
+          "name": "Blockers",
+          "type": "text"
+        },
+        {
+          "name": "What I Learned",
+          "type": "text"
+        },
+        {
+          "name": "GitHub Link",
+          "type": "url"
+        },
+        {
+          "name": "Status",
+          "type": "select",
+          "options": [
+            "Done",
+            "Partial",
+            "Missed"
+          ]
+        },
+        {
+          "name": "Energy Level",
+          "type": "number"
+        }
+      ],
+      "entry_template": {
+        "Today's Goals (Max 3)": "- \n- \n- ",
+        "What I Built": "",
+        "Blockers": "",
+        "What I Learned": "",
+        "GitHub Link": "",
+        "Status": "Partial",
+        "Energy Level": 3
+      },
+      "starter_entries": [
+        {
+          "Date": "2026-03-26",
+          "Day #": 1,
+          "Focus Area": "Meeting / Planning",
+          "Today's Goals (Max 3)": "- Meet CEO and clarify internship scope\n- Set up VSCode workspace\n- Write roadmap and next 7 days",
+          "What I Built": "Internship prep plan and workspace structure",
+          "Blockers": "Need confirmation on data, simulation stack, and expected deliverables",
+          "What I Learned": "The role likely spans RL, forecasting, physics-informed ML, and deployment",
+          "GitHub Link": "",
+          "Status": "Done",
+          "Energy Level": 4
+        }
+      ]
+    },
+    {
+      "name": "ML Projects",
+      "properties": [
+        {
+          "name": "Project Name",
+          "type": "title"
+        },
+        {
+          "name": "Type",
+          "type": "select",
+          "options": [
+            "Time Series",
+            "RL",
+            "Systems",
+            "Physics + ML"
+          ]
+        },
+        {
+          "name": "Description",
+          "type": "text"
+        },
+        {
+          "name": "Tech Stack",
+          "type": "text"
+        },
+        {
+          "name": "Status",
+          "type": "select",
+          "options": [
+            "Not Started",
+            "In Progress",
+            "Done"
+          ]
+        },
+        {
+          "name": "GitHub Repo",
+          "type": "url"
+        },
+        {
+          "name": "Demo Ready?",
+          "type": "checkbox"
+        }
+      ],
+      "entries": [
+        {
+          "Project Name": "Flood Predictor",
+          "Type": "Time Series",
+          "Description": "Predict water level or flood-related signal from rainfall and historical sequence data.",
+          "Tech Stack": "Python, Pandas, NumPy, PyTorch, Matplotlib",
+          "Status": "Not Started",
+          "GitHub Repo": "",
+          "Demo Ready?": false
+        },
+        {
+          "Project Name": "RL Flood Controller",
+          "Type": "RL",
+          "Description": "Custom environment where an agent controls a gate, pump, or action to minimize overflow.",
+          "Tech Stack": "Python, Gymnasium, Stable-Baselines3, PyTorch",
+          "Status": "Not Started",
+          "GitHub Repo": "",
+          "Demo Ready?": false
+        },
+        {
+          "Project Name": "Hybrid Simulation Model",
+          "Type": "Physics + ML",
+          "Description": "Use ML to emulate, accelerate, or correct a simplified flood simulation.",
+          "Tech Stack": "Python, NumPy, PyTorch",
+          "Status": "Not Started",
+          "GitHub Repo": "",
+          "Demo Ready?": false
+        },
+        {
+          "Project Name": "ML API",
+          "Type": "Systems",
+          "Description": "Serve a trained model behind a FastAPI endpoint and document how to run it locally.",
+          "Tech Stack": "Python, FastAPI, Uvicorn, Docker",
+          "Status": "Not Started",
+          "GitHub Repo": "",
+          "Demo Ready?": false
+        }
+      ]
+    }
+  ],
+  "suggested_views": [
+    {
+      "database": "ML Internship Roadmap",
+      "name": "By Focus Area",
+      "group_by": "Focus Area"
+    },
+    {
+      "database": "Daily Build Log",
+      "name": "This Week",
+      "filter": "Date is within the next/past 7 days"
+    },
+    {
+      "database": "ML Projects",
+      "name": "Active Only",
+      "filter": "Status is not Done"
+    }
+  ]
+}
