@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 #data dictionary (keys and array of values)
 data = {
-    "rainfall": [5, 15, 25, 35, 45, 60], 
+    "rainfall": [1, 3, 10, 20, 70, 100], 
     "flood": [0, 0, 1, 1, 1, 1]
 }
 
@@ -21,3 +21,4 @@ plt.ylabel("Flood")
 plt.title("Rainfall vs Flood Occurence")
 plt.show() #displaying plot
 plt.savefig("outputs/day01_scatter.png") #saving the plot as an image in outputs folder
+#Pattern: as rainfall increases, the likelihood of flood occurrence also increases
