@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression 
 #dataset creation
 data = {
-    "rainfall": [5, 15, 25, 35, 45, 60], 
+    "rainfall": [1, 10, 20, 30, 80, 120], 
     "flood": [0, 0, 1, 1, 1, 1] 
 }
 
@@ -16,6 +16,10 @@ y = df["flood"] #dependent variable (1D array) Single brackets to get a Series
 model = LinearRegression() #creating linear regression model
 model.fit(x, y)#telling model to learn from data
 predictions = model.predict(x) #making predictions using the trained model
+
+#New Rainfall\
+new_rainfall = [[50]]
+print("Prediction for 50 rainfall:", model.predict(new_rainfall))
 
 #Visualizing the results
 plt.scatter(x, y) 

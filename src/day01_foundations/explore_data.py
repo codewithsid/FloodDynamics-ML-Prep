@@ -22,3 +22,4 @@ plt.title("Rainfall vs Flood Occurence")
 plt.show() #displaying plot
 plt.savefig("outputs/day01_scatter.png") #saving the plot as an image in outputs folder
 #Pattern: as rainfall increases, the likelihood of flood occurrence also increases
+
