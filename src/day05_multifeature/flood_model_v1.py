@@ -28,6 +28,11 @@ accuracy = accuracy_score(y_test, y_pred) #calculating the accuracty from the mo
 print("Accuracy:", accuracy)
 print("Model Coefficients:", model.coef_) #representation of the automatically assigned weights to features 
 
+new_data = [[10, 95, 9.5]]
+model.predict(new_data)
+print("Flood prediction for new data (10, 95, 9.5):", model.predict(new_data)[0]) #predicting the flood occurrence for a new set of features (rainfall=10, temperature=95, soil_moisture=9.5)
+print("Flood probability for new data (10, 95, 9.5):", model.predict_proba(new_data)[0][1]) #predicting the probability of flood occurrence for a new set of features (rainfall=10, temperature=95, soil_moisture=9.5)
+""""
 #Visualization of only 2 features (rainfall and soil-moisture)
 x_vis = df[["rainfall", "soil_moisture"]]
 y = df["flood"] 
@@ -56,3 +61,4 @@ plt.ylabel("Soil Moisture")
 plt.title("Flood Classification Boundary")
 plt.savefig("outputs/day05_contourplot.png")
 plt.show()
+"""
