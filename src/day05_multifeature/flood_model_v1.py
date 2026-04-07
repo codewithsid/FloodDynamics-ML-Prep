@@ -60,4 +60,8 @@ plt.xlabel("Rainfall")
 plt.ylabel("Soil Moisture")
 plt.title("Flood Classification Boundary")
 plt.savefig("outputs/day05_contourplot.png")
+<<<<<<< HEAD
 plt.show()
+=======
+plt.show()
+>>>>>>> 72d52361 (fixing merge conflicts)

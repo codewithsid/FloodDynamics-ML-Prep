@@ -39,6 +39,7 @@ print("\ny_pred (predicted classes):\n", y_pred) #printing the predicted classes
 #mini experiments
 new_rain = [[50]]
 print("flood probability for rainfall of 50:", model.predict_proba(new_rain)[0][1]) #predicting the probability of flood occurrence for a new rainfall value of 50
+#Get's output for the probability of a flood, don't need the probability of a non-flood hence [0][1] to access the second element of the first row of the predicted probabilities array
 print("flood prediction for rainfall of 50:", model.predict(new_rain)[0]) #predicting the flood occurrence for a new rainfall value of 50 (binary)
 
 prob = model.predict_proba(new_rain)[0][1] #storing the predicted probability of flood occurrence for a new rainfall value of 50
@@ -54,6 +55,7 @@ plt.ylabel("Flood")
 plt.title("Logistic Regression: Decision Boundary")
 #plotting the decision boundary
 plt.plot(x, model.predict_proba(x)[:, 1], color='orange', label='predicted probabilities') #plotting the predicted probabilities as a curve
+#only have to deal with the probabilities of the positive class (flood occurrence) which is why we use [:, 1] to access the second column of the predicted probabilities array
 plt.legend() #adding legend to the plot
 plt.savefig("outputs/day04_classification.png") #saving the plot as an image in outputs folder
 plt.show() #displaying the plot
