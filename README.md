@@ -16,7 +16,7 @@ In preparation for my Machine Learning Engineering Internship at MIT based start
 - Built baseline time-series predictor
 - Started LSTM implementation
 
-###Week 2
+### Week 2
 - Started cleaning and training on robust/clean data
 
 ## Notes
