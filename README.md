@@ -16,5 +16,8 @@ In preparation for my Machine Learning Engineering Internship at MIT based start
 - Built baseline time-series predictor
 - Started LSTM implementation
 
+###Week 2
+- Started cleaning and training on robust/clean data
+
 ## Notes
 Internal planning lives in Notion; code execution happens in this repo.
