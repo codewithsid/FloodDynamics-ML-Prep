@@ -6,6 +6,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.metrics import accuracy_score
 
 df = pd.read_csv("data/flood_data.csv")
+#df = df.dropna()
 
 print("\nRaw data:")
 print(df)
