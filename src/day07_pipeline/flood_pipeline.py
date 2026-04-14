@@ -56,9 +56,9 @@ print(results)
 
 #Predicting for new data
 new_data = pd.DataFrame([{
-    "rainfall": 28,
-    "temperature": 79,
-    "soil_moisture": 0.35
+    "rainfall": 12,
+    "temperature": 75,
+    "soil_moisture": 0.20
 }])
 new_data_scaled = scaler.transform(new_data)
 new_pred = model.predict(new_data_scaled)[0]#predicting the flood occurrence for the new data and accessing the predicted probability of flood occurrence for the new data (only the probability of the positive class, which is why we use [0][1])
@@ -72,3 +72,6 @@ print(new_prob)
 
 print("\nPredicted class:")
 print(new_pred)
+
+print("\nModel Coefficients:")
+print(model.coef_)
