@@ -64,10 +64,11 @@ x_full = df[[
 
 y = df["flood"]
 
+'''
 #adding noise to explode models
 for i in range(10):
     df[f"noise{i}"] = np.random.rand(len(df))
-
+'''
 #simple dataset
 simple_accuracies = [] #Takes average of accuracies for better estimate
 for i in range(10): #Many splits -> many results -> average them
