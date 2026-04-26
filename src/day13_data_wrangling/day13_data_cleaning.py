@@ -10,7 +10,13 @@ import numpy as np
 
 df = pd.read_csv("data/flood_data_brokener.csv")
 print("\nMissing Data:\n", df.isnull().sum()) #summing up the null values in each column
-print("\nData Description:\n", df.describe()) #describing the data to find outliers
+print("\nDirty Data Description:\n", df.describe()) #describing the data to find outliers
+
+#After describing data, removing outliers
+df["soil_moisture"] = df["soil_moisture"].clip(lower = 0, upper = 1)
+    #alternativeley, removing extreme rows could be done too 
+#df = df[df["soil_moisture"] <= 1] 
+#df = df.dropna() #removing rows with missing values
 
 x = df[["rainfall", "temperature", "soil_moisture"]]
 y = df["flood"]
@@ -24,6 +30,7 @@ for i in range(20):
     imputer = SimpleImputer(strategy = "mean")
     x_train_imputed = imputer.fit_transform(x_train)
     x_test_imputed = imputer.transform(x_test)
+    
 
     #logistic Regression
     scaler = StandardScaler()
@@ -39,4 +46,5 @@ for i in range(20):
     log_acc = accuracy_score(y_test, y_pred_log)
     log_accuracy.append(log_acc)
 
-print("Average Logistic Regression Accuracy:", np.mean(log_accuracy))
+print("\nClean data descrition:\n", df.describe())
+print("\nAverage Logistic Regression Accuracy:", np.mean(log_accuracy))
